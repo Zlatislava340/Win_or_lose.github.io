@@ -1,0 +1,257 @@
+
+.heading img {
+    width: 43%;/* Ширина картинки в шапке сайта. Она занимает 43% от ширины родительского элемента (того, где она находится). */
+    height: 43%;/* Высота картинки. Занимает 43% от высоты родительского элемента. Часто высота подстраивается автоматически,
+     чтобы сохранить пропорции. */
+    display: block;/* Картинка становится блочным элементом. Это значит, что она занимает всю доступную ширину и переносит следующие
+     элементы на новую строку. */
+    margin-left: auto;/* Левый отступ автоматический. Это используется для центрирования картинки по горизонтали. */
+    margin-right: auto;/* Правый отступ автоматический. Это используется для центрирования картинки по горизонтали. */
+}
+.text {
+    color: #d9b24a; /* Цвет текста - золотистый. */
+    text-align: justify;/* Выравнивание текста по ширине. Как в книгах, текст ровный и слева, и справа. */
+    font-size: 25px; /* Размер шрифта - 25 пикселей. */
+    line-height: 1.6;/* Расстояние между строками текста. Это делает текст более читабельным, не давая строкам слипаться. */
+    padding: 10px;/* Внутренний отступ вокруг текста - 10 пикселей.  Это создает пространство между текстом и границей блока,
+     в котором он находится. */
+    margin: 20px;/* Внешний отступ вокруг текста - 20 пикселей. Это создает пространство между блоком с текстом и другими
+     элементами на странице.*/
+    font-family: sans-serif;/* Шрифт без засечек*/
+}
+body {
+    background: darkolivegreen;/* Цвет фона всей веб-страницы - темно-оливковый. */
+}
+
+.BIGCLASS {
+    display: flex;/* Включаем Flexbox. Это мощный инструмент для гибкой компоновки элементов. */
+    justify-content: center;/* Располагаем элементы (в данном случае, карточки) по центру по горизонтали. */
+    align-items: center; /* Располагаем элементы по центру по вертикали. */
+
+}
+
+.container{
+    position: relative;/* Позиционирование относительно. Это значит, что этот элемент может содержать другие элементы,
+     которые будут позиционироваться относительно него.нужен для контроля над позиционированием карточек _внутри_ контейнера. */
+    width: 1000px;/* Ширина контейнера - 1000 пикселей. */
+    display: flex;/* Включаем Flexbox. */
+    justify-content: center;/* Располагаем элементы по центру по горизонтали. */
+    align-items: center;/* Располагаем элементы по центру по вертикали. */
+    flex-wrap: wrap;/* Если карточки не влезают в одну строку, переносим их на новую строку. */
+    padding: 30px; /* Внутренний отступ вокруг содержимого контейнера - 30 пикселей. */
+}
+.container .card { /* Выбираем элементы с классом "card", которые находятся внутри элементов с классом "container". */
+    position: relative;/* Позиционирование относительно.в сочетании с height: 0 и padding: 300px, позволяет создать эффект
+     скрытого контента,который показывается при наведении нужен для контроля над позиционированием элементов (в частности,
+     контейнера с изображением imgBx и контента) _внутри_ каждой карточки. */
+    width: 300px;/* Ширина карточки - 300 пикселей. */
+    height: 0px;/* Начальная высота карточки - 0 пикселей. Это нужно для создания эффекта разворачивания при наведении. */
+    background: #d9b24a;/* Цвет фона карточки - золотистый. */
+    margin: 30px 10px;/* Отступы вокруг карточки: сверху и снизу - 30 пикселей, слева и справа - 10 пикселей. */
+    padding: 20px 15px 300px 15px;/* Внутренние отступы. Большой нижний отступ (300px) нужен для скрытия части содержимого карточки
+     в обычном состоянии. */
+    display: flex;/* Включаем Flexbox. */
+    flex-direction: column; /* Располагаем элементы внутри карточки в столбик (сверху вниз). */
+    box-shadow: 0 5px 202px rgba(0,0,0,0.5);/* Тень вокруг карточки. Это делает ее более объемной. */
+    transition: 0.3s ease-in-out;/* Анимация. Говорим браузеру плавно изменять свойства карточки в течение 0.3 секунды. */
+}
+.container .card:hover{ /* Когда наводим курсор мыши на карточку... */
+    height: 420px;/* увеличиваем ее высоту до 420 пикселей. Это создает эффект "разворачивания". */
+}
+.container .card .imgBx { /* Выбираем элементы с классом "imgBx", которые находятся внутри карточки. */
+    position: relative;/*смещения элементов от их нормального положения в потоке документа без влияния на окружающие элементы */
+    width: 260px; /* Ширина контейнера для картинки. */
+    height: 260px;/* Высота контейнера для картинки. */
+    top: -60px;/* Сдвигаем контейнер с картинкой вверх на 60 пикселей. */
+    left: 50%; /* сдвигает левый край контейнера на 50% ширины родительского элемента */
+    transform: translateX(-50%);/* Сдвигаем элемент по горизонтали влево на 50% от *собственной* ширины. Это необходимо для
+     точного центрирования элемента, когда используется `left: 50%`. */
+    box-shadow: 0 5px 202px rgba(0,0,0,0.2);/* Тень вокруг контейнера для картинки. */
+    display: flex;/* Включаем Flexbox. */
+    justify-content: center ;/* Картинку по центру по горизонтали. */
+    align-items: center;/* Картинку по центру по вертикали. */
+}
+.container .card .imgBx img {/* Выбираем элементы <img>, которые находятся внутри контейнера с классом "imgBx". */
+    max-width: 100%;/* Картинка не должна быть шире, чем ее контейнер. */
+    border-radius:4px;/* Закругляем уголки картинки на 4 пикселя. */
+    width: 234px;/* Фиксированная ширина картинки */
+    height: auto; /* Высота подстраивается автоматически, чтобы сохранить пропорции. */
+}
+.container .card .content{/* Выбираем элементы с классом "content", которые находятся внутри карточки. */
+    position: relative;/* смещения элементов от их нормального положения в потоке документа без влияния на окружающие элементы */
+    margin-top: -140px;/* Сдвигаем контент вверх на 140 пикселей. Это нужно, чтобы спрятать его часть, пока карточка не "развернута". */
+    padding: 10px 15px ;/* Внутренние отступы вокруг текста. */
+    text-align: center;/* Выравниваем текст по центру. */
+    color: black;/* Цвет текста - черный. */
+    visibility: hidden;/* Скрываем контент. Но место под него остается. */
+    opacity: 0;/* Делаем контент полностью прозрачным (невидимым). */
+    transition: 0.3s ease-in-out;/* Анимация для плавного изменения свойств контента. */
+}
+.container .card:hover .content{/* Когда наводим мышку на карточку... */
+    visibility: visible;/* делаем контент видимым. */
+    opacity: 1;/* делаем контент непрозрачным. */
+    margin-top: -40px;/* Поднимаем контент на 40 пикселей, чтобы он переместился в нужное положение при разворачивании карточки. */
+    transition-delay: 0.3s;/* Задерживаем появление контента на 0.3 секунды. Это нужно, чтобы контент появлялся ПОСЛЕ того,
+     как карточка полностью развернется. */
+}
+
+
+
+/* здесь мои попытки сделать тоже самое с другими карточками для эпизодов 4, 5, 6 */
+
+.BIGCLASS_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.BIGCLASS_1 .container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.BIGCLASS_1 .container .card {
+    position: relative;
+    max-width: 300px;
+    width: 300px;
+    height: 0px;
+    background: #d9b24a;
+    margin: 30px 10px;
+    padding: 20px 15px 300px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.BIGCLASS_1 .container .card:hover{
+    height: 420px;
+}
+.BIGCLASS_1 .container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 202px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+.BIGCLASS_1 .container .card .imgBx img {
+    max-width: 100%;
+    border-radius:4px;
+    width: 234px;
+    height: auto;
+}
+.BIGCLASS_1 .container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px ;
+    text-align: center;
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.BIGCLASS_1 .container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+
+
+/* здесь мои попытки сделать тоже самое с другими карточками для эпизодов 7 и 8 */
+
+.BIGCLASS_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.BIGCLASS_2 .container{
+    position: relative;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.BIGCLASS_2 .container .card {
+    position: relative;
+    max-width: 300px;
+    width: 300px;
+    height: 0px;
+    background: #d9b24a;
+    margin: 30px ;
+    padding: 20px 15px 300px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.BIGCLASS_2 .container .card:hover{
+    height: 420px;
+}
+.BIGCLASS_2 .container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 202px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+.BIGCLASS_2 .container .card .imgBx img {
+    max-width: 100%;
+    border-radius:4px;
+    width: 234px;
+    height: auto;
+}
+.BIGCLASS_2 .container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px ;
+    text-align: center;
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.BIGCLASS_2 .container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+.imgBxx {
+    width: 60%;
+    margin: auto;
+    display: block;
+}
+
+
+
