@@ -136,7 +136,7 @@ body {
     transition: 0.3s ease-in-out;/* Анимация. Говорим браузеру плавно изменять свойства карточки в течение 0.3 секунды. */
 }
 .container .card:hover{ /* Когда наводим курсор мыши на карточку... */
-    height: 420px;/* увеличиваем ее высоту до 420 пикселей. Это создает эффект "разворачивания". */
+    height: 850px;/* увеличиваем ее высоту до 420 пикселей. Это создает эффект "разворачивания". */
 }
 .container .card .imgBx { /* Выбираем элементы с классом "imgBx", которые находятся внутри карточки. */
     position: relative;/*смещения элементов от их нормального положения в потоке документа без влияния на окружающие элементы */
@@ -210,7 +210,7 @@ body {
     transition: 0.3s ease-in-out;
 }
 .BIGCLASS_1 .container .card:hover{
-    height: 420px;
+    height: 850px;
 }
 .BIGCLASS_1 .container .card .imgBx {
     position: relative;
@@ -282,7 +282,7 @@ body {
     transition: 0.3s ease-in-out;
 }
 .BIGCLASS_2 .container .card:hover{
-    height: 420px;
+    height: 850px;
 }
 .BIGCLASS_2 .container .card .imgBx {
     position: relative;
